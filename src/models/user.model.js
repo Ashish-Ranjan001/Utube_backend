@@ -18,34 +18,33 @@ const userSchema = new Schema({
         unique:true,
         lowecase:true,
         trim: true,
+    },
+    fullname:{
+        type:String,
+        required:true,
+        trim: true,
+        index: true
+    },
+    avatar:{
+        type :String, //Cloudnary url will be stored
+        required:true,
+    },
+    coverimage:{
+        type:String 
+    },
+    watchhistory:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Video"
+        }
+    ],
+    password: {
+        type: String,
+        required:[true,"Password is required"]
+    },
+    refreshToken:{
+        type:String
     }
-    // ,
-    // fullname:{
-    //     type:String,
-    //     required:true,
-    //     trim: true,
-    //     index: true
-    // },
-    // avatar:{
-    //     type :String, //Cloudnary url will be stored
-    //     required:true,
-    // },
-    // coverimage:{
-    //     type:String 
-    // },
-    // watchhistory:[
-    //     {
-    //         type: Schema.Types.ObjectId,
-    //         ref: "Video"
-    //     }
-    // ],
-    // password: {
-    //     type: String,
-    //     required:[true,"Password is required"]
-    // },
-    // refreshToken:{
-    //     type:String
-    // }
 },
 {
     timestamps: true
