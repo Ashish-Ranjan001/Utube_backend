@@ -1,4 +1,4 @@
-// user.controller.js
+import {asyncHandler} from "../utils/asyncHandler.js"
 
 const registerUser = (req, res) => {
     try {
